@@ -1,4 +1,4 @@
-export enum HttpStatusCode {
+export enum STCODE {
     OK = 200,
     CREATED = 201,
     ACCEPTED = 202,
@@ -15,7 +15,7 @@ export enum HttpStatusCode {
     SERVICE_UNAVAILABLE = 503,
 }
 
-export enum HttpStatusMessage {
+export enum MSG {
     OK = "OK",
     CREATED = "Created",
     ACCEPTED = "Accepted",
