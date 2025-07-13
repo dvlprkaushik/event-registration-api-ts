@@ -150,7 +150,8 @@ The API provides detailed error messages for:
 - Server errors
 
 Example validation error response (400 Bad Request):
-``` json
+
+```json
 {
   "success": false,
   "message": "Validation failed",
