@@ -1,37 +1,38 @@
 # 🚀 Event Registration API
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Zod](https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white)
-![REST API](https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge\&logo=typescript\&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge\&logo=express\&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=nodedotjs\&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge\&logo=zod\&logoColor=white)
+![REST API](https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge\&logo=postman\&logoColor=white)
 
 A robust RESTful API for event registration built with Express.js and TypeScript, featuring comprehensive input validation using Zod.
 
 ## 📋 Overview
 
 This backend API service handles event registration with emphasis on:
-- Strong data validation and sanitization using Zod
-- Clear request-response patterns
-- Duplicate registration prevention
-- Type safety with TypeScript
-- Consistent API response format
+
+* Strong data validation and sanitization using Zod
+* Clear request-response patterns
+* Duplicate registration prevention
+* Type safety with TypeScript
+* Consistent API response format
 
 ## 🛠️ Tech Stack
 
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Language**: TypeScript
-- **Validation**: Zod
-- **Architecture**: RESTful API
+* **Runtime**: Node.js
+* **Framework**: Express.js
+* **Language**: TypeScript
+* **Validation**: Zod
+* **Architecture**: RESTful API
 
 ## ✨ Key Features
 
-- Comprehensive input validation with detailed error messages
-- Prevents duplicate registrations for the same event
-- In-memory data storage for quick testing and prototyping
-- Consistent API response format for success and error cases
-- Administrative endpoint for viewing registrations
+* Comprehensive input validation with detailed error messages
+* Prevents duplicate registrations for the same event
+* In-memory data storage for quick testing and prototyping
+* Consistent API response format for success and error cases
+* Administrative endpoint for viewing registrations
 
 ## 📦 Installation
 
@@ -63,14 +64,15 @@ BASE_URL=localhost
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description | Required Body |
-|--------|----------|-------------|--------------|
-| POST | `/api/v1/event/register` | Register for an event | `fullName`, `email`, `phone`, `eventName` |
-| GET | `/api/v1/event/registrations` | Get all registrations (Admin) | None |
+| Method | Endpoint                      | Description                   | Required Body                             |
+| ------ | ----------------------------- | ----------------------------- | ----------------------------------------- |
+| POST   | `/api/v1/event/register`      | Register for an event         | `fullName`, `email`, `phone`, `eventName` |
+| GET    | `/api/v1/event/registrations` | Get all registrations (Admin) | None                                      |
 
 ### Registration Request Example
 
 **Using cURL:**
+
 ```bash
 curl -X POST http://localhost:3000/api/v1/event/register \
   -H "Content-Type: application/json" \
@@ -83,6 +85,7 @@ curl -X POST http://localhost:3000/api/v1/event/register \
 ```
 
 **Using JSON:**
+
 ```json
 {
   "fullName": "Kaushik Das",
@@ -116,17 +119,30 @@ curl http://localhost:3000/api/v1/event/registrations
 
 ## 📁 Project Structure
 
-```
+```bash
 event-registration-api/
 ├── src/
-│   ├── controllers/          # Business logic
-│   ├── routes/              # Express routes
-│   ├── validators/          # Zod validation schemas
-│   ├── types/              # TypeScript types
-│   ├── middlewares/        # Custom middleware
-│   ├── utils/              # Utilities
-│   ├── app.ts             # Express app setup
-│   └── server.ts          # Server entry point
+│   ├── config/
+│   │   ├── env.d.ts
+│   │   ├── HealthCheck.ts
+│   │   └── listener.ts
+│   ├── controllers/
+│   │   └── event.controller.ts
+│   ├── middlewares/
+│   │   ├── checkRole.middleware.ts
+│   │   ├── mockUser.middleware.ts
+│   │   ├── requestLogger.middleware.ts
+│   │   └── validate.middleware.ts
+│   ├── routes/
+│   │   └── event.routes.ts
+│   ├── types/
+│   │   ├── express/
+│   │   │   └── index.d.ts
+│   │   ├── Event.types.ts
+│   │   └── HttpUtils.types.ts
+│   ├── validators/
+│   │   ├── event.validator.ts
+│   │   └── index.ts
 ├── .env
 ├── .env.example
 ├── tsconfig.json
@@ -135,19 +151,20 @@ event-registration-api/
 
 ## ✅ Validation Rules
 
-| Field | Validation Rules |
-|-------|-----------------|
-| fullName | Required, minimum 3 characters |
-| email | Required, valid email format |
-| phone | Required, 10 digits |
-| eventName | Required, non-empty string |
+| Field     | Validation Rules               |
+| --------- | ------------------------------ |
+| fullName  | Required, minimum 3 characters |
+| email     | Required, valid email format   |
+| phone     | Required, 10 digits            |
+| eventName | Required, non-empty string     |
 
 ## 🔍 Error Handling
 
 The API provides detailed error messages for:
-- Invalid input data
-- Duplicate registrations
-- Server errors
+
+* Invalid input data
+* Duplicate registrations
+* Server errors
 
 Example validation error response (400 Bad Request):
 
@@ -185,4 +202,4 @@ npm start
 
 ## 👥 Author
 
-- **Kaushik Das** - [@dvlprkaushik](https://github.com/dvlprkaushik)
+* **Kaushik Das** - [@dvlprkaushik](https://github.com/dvlprkaushik)
