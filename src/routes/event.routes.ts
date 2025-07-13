@@ -10,6 +10,6 @@ const eventRoute = Router();
 
 eventRoute.route("/v1/event/register").post(mockUser, checkRole("admin", "user"), validateBody(eventSchema), createEvent);
 
-eventRoute.route("/v1/event/registrations").post(mockUser,checkRole("admin"),getEvents);
+eventRoute.route("/v1/event/registrations").get(mockUser,checkRole("admin"),getEvents);
 
 export { eventRoute };
