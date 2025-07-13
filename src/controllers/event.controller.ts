@@ -33,3 +33,25 @@ export const createEvent: RequestHandler<{}, {}, EventBody> = (req, res) => {
     });
   }
 };
+
+export const getEvents: RequestHandler = (req, res) => {
+  try {
+    if (EVENTS.length === 0) {
+      return res.status(STCODE.NOT_FOUND).json({
+        success: false,
+        message: MSG.NOT_FOUND,
+      });
+    }
+    return res.status(STCODE.CREATED).json({
+      success: true,
+      message: MSG.OK,
+      data: EVENTS,
+    });
+  } catch (error) {
+    return res.status(STCODE.INTERNAL_SERVER_ERROR).json({
+      success: true,
+      message: MSG.INTERNAL_SERVER_ERROR,
+      error: error,
+    });
+  }
+};
