@@ -18,7 +18,7 @@ This backend API service handles event registration with emphasis on:
 * Type safety with TypeScript
 * Consistent API response format
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack ->
 
 * **Runtime**: Node.js
 * **Framework**: Express.js
