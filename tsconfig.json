@@ -15,7 +15,6 @@
     "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "types" : ["node"]
   },
   "exclude": ["node_modules"],
   "include" : ["src/config/env.d.ts","src"]
